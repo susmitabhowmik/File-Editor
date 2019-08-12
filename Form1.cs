@@ -56,7 +56,11 @@ namespace File_Editor
 
         private void TxtNew_DoubleClick(object sender, EventArgs e)
         {
-
+            if (txtNew.Text != "")
+            {
+                //richTextBox1.SelectedText = txtNew.Text;
+                richTextBox1.Text = richTextBox1.Text.Replace(txtOld.Text, txtNew.Text);
+            }
         }
     }
 }
