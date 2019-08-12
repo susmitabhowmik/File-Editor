@@ -26,5 +26,21 @@ namespace File_Editor
                 richTextBox1.SaveFile(saveFileDialog1.FileName); //saves text file
             }
         }
+
+        private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.FileName = ""; //load dialog box with no default file name
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    richTextBox1.LoadFile(openFileDialog1.FileName); //loads file from drive into rich text box
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message); //shows message from exception object;
+                }
+            }
+        }
     }
 }
