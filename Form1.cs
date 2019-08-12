@@ -16,5 +16,15 @@ namespace File_Editor
         {
             InitializeComponent();
         }
+
+        private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // save file to the hard drive
+            //file is saved to the location selected in the file save dialog
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                richTextBox1.SaveFile(saveFileDialog1.FileName); //saves text file
+            }
+        }
     }
 }
