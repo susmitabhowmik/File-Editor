@@ -62,5 +62,11 @@ namespace File_Editor
                 richTextBox1.Text = richTextBox1.Text.Replace(txtOld.Text, txtNew.Text);
             }
         }
+
+        private void FontToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fontDialog1.ShowDialog(); //show box so new font can be chosen
+            richTextBox1.Font = fontDialog1.Font; // set rich text box font to the one chosen from the dialog box
+        }
     }
 }
