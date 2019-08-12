@@ -42,5 +42,21 @@ namespace File_Editor
                 }
             }
         }
+
+        private void TxtOld_DoubleClick(object sender, EventArgs e)
+        {
+            if (txtOld.Text.Trim().Length > 0) //make sure box isn't empty
+            {
+                int start = richTextBox1.Find(txtOld.Text); //search for start position of the old text in the text box
+                richTextBox1.Select(start, txtOld.Text.Length); // select found text in rich text box
+
+                richTextBox1.SelectionBackColor = Color.Yellow; //changes selected background color to yellow
+            }
+        }
+
+        private void TxtNew_DoubleClick(object sender, EventArgs e)
+        {
+
+        }
     }
 }
