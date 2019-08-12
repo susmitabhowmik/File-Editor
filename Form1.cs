@@ -68,5 +68,16 @@ namespace File_Editor
             fontDialog1.ShowDialog(); //show box so new font can be chosen
             richTextBox1.Font = fontDialog1.Font; // set rich text box font to the one chosen from the dialog box
         }
+
+        private void PrintPreviewPrintToolStripMenuItem_Click(object sender, EventArgs e) //runs when previewing
+        {
+            printPreviewDialog1.Document = printDocument1; //choose document to be displayed in preview
+            printPreviewDialog1.ShowDialog(); //brings up a window to show a preview. Show dialog is the effect of calling the print page event on print document 1
+        }
+
+        private void PrintDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e) //runs when page is about to be previewed or printed
+        {
+            e.Graphics.DrawString(richTextBox1.Text, fontDialog1.Font, Brushes.Black, e.MarginBounds, StringFormat.GenericTypographic);
+        }
     }
 }
