@@ -44,6 +44,8 @@
             this.printPreviewPrintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +65,8 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.saveToolStripMenuItem,
             this.openToolStripMenuItem,
-            this.printPreviewPrintToolStripMenuItem});
+            this.printPreviewPrintToolStripMenuItem,
+            this.printToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
@@ -154,6 +157,22 @@
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
+            // printToolStripMenuItem
+            // 
+            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.printToolStripMenuItem.Text = "print";
+            this.printToolStripMenuItem.Click += new System.EventHandler(this.PrintToolStripMenuItem_Click);
+            // 
+            // printDialog1
+            // 
+            this.printDialog1.AllowSelection = true;
+            this.printDialog1.AllowSomePages = true;
+            this.printDialog1.Document = this.printDocument1;
+            this.printDialog1.PrintToFile = true;
+            this.printDialog1.ShowHelp = true;
+            this.printDialog1.UseEXDialog = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -188,6 +207,8 @@
         private System.Windows.Forms.ToolStripMenuItem printPreviewPrintToolStripMenuItem;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
+        private System.Windows.Forms.PrintDialog printDialog1;
     }
 }
 

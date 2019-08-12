@@ -79,5 +79,16 @@ namespace File_Editor
         {
             e.Graphics.DrawString(richTextBox1.Text, fontDialog1.Font, Brushes.Black, e.MarginBounds, StringFormat.GenericTypographic);
         }
+
+        private void PrintToolStripMenuItem_Click(object sender, EventArgs e) //print using print dialog box
+        {
+            //first show dialog and then check if user approves printing
+            //compare value returned against the okay value in the DialogResult enumeration
+            if(printDialog1.ShowDialog() == DialogResult.OK)
+            {
+                //print document
+                printDocument1.Print();
+            }
+        }
     }
 }
